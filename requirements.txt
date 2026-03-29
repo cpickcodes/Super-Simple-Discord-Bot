@@ -1,2 +1,2 @@
-pycoingecko
-python-telegram-bot
+discord.py
+python-dotenv
