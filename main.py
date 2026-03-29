@@ -14,7 +14,9 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-secret_role = "gamer"
+secret_role = ""
+
+filtered_words = ["", ""]
 
 @bot.event
 async def on_ready():
@@ -28,10 +30,15 @@ async def on_member_join(member):
 async def on_message(message):
 	if message.author == bot.user:
 		return
-		
-	if "shit" in message.content.lower():
-		await message.delete()
-		await message.channel.send(f"{message.author.mention} - don't use that word!")
+
+	msg = message.content.lower()
+
+	for word in filtered_words:
+		if word in msg:
+			await message.delete()
+			await message.channel.send(f"{message.author.mention} - don't use that word!")
+		else:
+			return
 		
 	await bot.process_commands(message)
 	
