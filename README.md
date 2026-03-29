@@ -5,7 +5,7 @@ This is an extremely basic Discord bot with a few commands, a simple role system
 
 ## How to use it
 
-**1)** First, you must create a discod bot using the developer portal ensuring to enable:
+**1)** First, you must create a discord bot using the developer portal ensuring to enable:
 
 * Manage Roles
 * View Channels
